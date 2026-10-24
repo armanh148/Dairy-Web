@@ -81,7 +81,7 @@ export default function Navbar({ cartCount, onOpenCart, onOpenCheckout, onOpenAi
         </nav>
 
         {/* Right: Actions */}
-        <div className="nav-actions-desktop">
+        <div className="nav-actions-right">
           <button
             className="nav-btn-find"
             onClick={() => handleNavClick('contact')}
@@ -109,8 +109,9 @@ export default function Navbar({ cartCount, onOpenCart, onOpenCheckout, onOpenAi
             <div className="nav-order-badge">{cartCount}</div>
           </button>
 
+          {/* Mobile-Only Hamburger Toggle */}
           <button
-            className="nav-mobile-hamburger"
+            className="nav-mobile-toggle"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
             aria-expanded={mobileMenuOpen}
@@ -120,15 +121,32 @@ export default function Navbar({ cartCount, onOpenCart, onOpenCheckout, onOpenAi
         </div>
       </div>
 
-      {/* Mobile Drawer Backdrop & Menu */}
+      {/* Fixed Fullscreen Mobile Drawer Overlay */}
       {mobileMenuOpen && (
-        <>
+        <div className="nav-mobile-menu">
           <div
             className="nav-mobile-backdrop"
             onClick={() => setMobileMenuOpen(false)}
             aria-hidden="true"
           />
           <div className="nav-mobile-dropdown">
+            <div className="nav-mobile-header">
+              <div className="nav-brand-group">
+                <CowenEmblem size={30} />
+                <div className="nav-brand-text-col">
+                  <span className="nav-brand-title" style={{ fontSize: '1.15rem' }}>COWEN</span>
+                  <span className="nav-brand-sub" style={{ fontSize: '0.6rem' }}>HERITAGE DAIRY</span>
+                </div>
+              </div>
+              <button
+                className="nav-mobile-close-btn"
+                onClick={() => setMobileMenuOpen(false)}
+                aria-label="Close menu"
+              >
+                <X size={20} />
+              </button>
+            </div>
+
             <div className="nav-mobile-links">
               <a href="#farm" onClick={() => handleNavClick('farm')}>THE FARM</a>
               <a href="#products" onClick={() => handleNavClick('products')}>ARTISANAL MILK</a>
@@ -155,7 +173,7 @@ export default function Navbar({ cartCount, onOpenCart, onOpenCheckout, onOpenAi
               </button>
             </div>
           </div>
-        </>
+        </div>
       )}
     </header>
   );
