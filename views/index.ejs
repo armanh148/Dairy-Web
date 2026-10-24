@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bondu Milk Shop - Smart Exotic Milk Choices</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- Page Loader -->
+    <div id="pageLoader" class="page-loader">
+        <div class="loader-brand">Bondu</div>
+        <div class="loader-sub">Milk Shop</div>
+        <div class="loader-bar"><div class="loader-bar-fill" id="loaderFill"></div></div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div id="cursorDot" class="cursor-dot"></div>
+    <div id="cursorRing" class="cursor-ring"></div>
+
+    <!-- Scroll Progress -->
+    <div id="scrollBar" class="scroll-progress"></div>
+
+    <!-- Grain Overlay -->
+    <div class="grain-overlay"></div>
+
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-glass-water"></i>
+                    </div>
+                    <span class="logo-text">Bondu Milk</span>
+                </div>
+                <div class="nav-links">
+                    <a href="#home" class="nav-link active" data-magnetic>Home</a>
+                    <a href="#products" class="nav-link" data-magnetic>Products</a>
+                    <a href="#benefits" class="nav-link" data-magnetic>Benefits</a>
+                    <a href="#contact" class="nav-link" data-magnetic>Contact</a>
+                </div>
+                <button class="cart-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge">0</span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge" data-anim="hero">
+                    <i class="fas fa-sparkles"></i>
+                    AI-Powered Milk Selection
+                </div>
+                <h1 class="hero-title" data-anim="hero">
+                    <span class="line"><span>Smart Exotic Milk Choices</span></span>
+                    <span class="line gradient-text"><span>For Faster Daily Health</span></span>
+                </h1>
+                <p class="hero-subtitle" data-anim="hero">
+                    Discover personalized milk options tailored to your health needs. 
+                    From farm-fresh cow milk to rare donkey milk — find your perfect match.
+                </p>
+                <div class="hero-buttons" data-anim="hero">
+                    <button class="btn btn-primary" id="ai-assistant-btn">
+                        <i class="fas fa-wand-magic-sparkles"></i>
+                        Try AI Assistant
+                    </button>
+                    <button class="btn btn-secondary">
+                        <i class="fas fa-play"></i>
+                        Watch Video
+                    </button>
+                </div>
+                <div class="hero-stats" data-anim="hero">
+                    <div class="stat">
+                        <span class="stat-number" data-count="500">0</span>
+                        <span class="stat-label">Happy Customers</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-count="4">0</span>
+                        <span class="stat-label">Milk Varieties</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-count="100">0</span>
+                        <span class="stat-label">% Organic</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-showcase" data-anim="hero">
+                <div class="showcase-container">
+                    <div class="floating-tag tag-calcium">
+                        <i class="fas fa-bone"></i>
+                        Calcium Rich
+                    </div>
+                    <div class="floating-tag tag-protein">
+                        <i class="fas fa-dumbbell"></i>
+                        High Protein
+                    </div>
+                    <div class="floating-tag tag-organic">
+                        <i class="fas fa-leaf"></i>
+                        Organic Care
+                    </div>
+                    <div class="floating-tag tag-vitamin">
+                        <i class="fas fa-capsules"></i>
+                        Vitamin Boost
+                    </div>
+                    <div class="hero-rings">
+                        <div class="hero-ring"></div>
+                        <div class="hero-ring ring-2"></div>
+                    </div>
+                    <div class="featured-bottle">
+                        <div class="bottle-glow"></div>
+                        <div class="bottle">
+                            <div class="bottle-cap"></div>
+                            <div class="bottle-neck"></div>
+                            <div class="bottle-body">
+                                <div class="bottle-label">
+                                    <span class="label-premium">PREMIUM</span>
+                                    <span class="label-name">Bondu Milk</span>
+                                    <span class="label-type">Fresh & Pure</span>
+                                </div>
+                                <div class="milk-wave"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <span>Scroll</span>
+            <div class="hero-scroll-line"><div class="hero-scroll-dot"></div></div>
+        </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee" data-reveal>
+        <div class="marquee-track">
+            <span class="marquee-item">CAMEL MILK</span><span class="marquee-sep">&bull;</span>
+            <span class="marquee-item">COW MILK</span><span class="marquee-sep">&bull;</span>
+            <span class="marquee-item">DONKEY MILK</span><span class="marquee-sep">&bull;</span>
+            <span class="marquee-item">DOG MILK</span><span class="marquee-sep">&bull;</span>
+            <span class="marquee-item">CAMEL MILK</span><span class="marquee-sep">&bull;</span>
+            <span class="marquee-item">COW MILK</span><span class="marquee-sep">&bull;</span>
+            <span class="marquee-item">DONKEY MILK</span><span class="marquee-sep">&bull;</span>
+            <span class="marquee-item">DOG MILK</span><span class="marquee-sep">&bull;</span>
+        </div>
+    </div>
+
+    <!-- Search & Filter Section -->
+    <section class="search-section" id="products">
+        <div class="container">
+            <div class="search-container" data-reveal>
+                <div class="search-box">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" class="search-input" placeholder="Search exotic milks..." id="search-input">
+                    <button class="search-btn">Search</button>
+                </div>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">
+                        <i class="fas fa-th"></i> All
+                    </button>
+                    <button class="filter-btn" data-filter="cow">
+                        <i class="fas fa-cow"></i> Cow
+                    </button>
+                    <button class="filter-btn" data-filter="donkey">
+                        <i class="fas fa-horse"></i> Donkey
+                    </button>
+                    <button class="filter-btn" data-filter="dog">
+                        <i class="fas fa-dog"></i> Dog
+                    </button>
+                    <button class="filter-btn" data-filter="camel">
+                        <i class="fas fa-horse-head"></i> Camel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="products-section">
+        <div class="container">
+            <div class="section-header" data-reveal>
+                <h2 class="section-title">Our Premium Milk Collection</h2>
+                <p class="section-subtitle">Handpicked exotic varieties for your wellness journey</p>
+            </div>
+            <div class="products-grid" id="productsGrid">
+                <!-- Cow Milk -->
+                <div class="product-card" data-category="cow">
+                    <div class="product-badge bestseller">
+                        <i class="fas fa-star"></i> Best Seller
+                    </div>
+                    <div class="product-image cow-milk">
+                        <div class="milk-bottle-visual">
+                            <div class="bottle-mini">
+                                <div class="bottle-mini-cap"></div>
+                                <div class="bottle-mini-body" style="background: linear-gradient(135deg, #fff5e6, #ffe4c4);">
+                                    <div class="mini-label">COW</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-emoji">🐄</div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-header">
+                            <h3 class="product-name">Cow Milk</h3>
+                            <div class="product-price">
+                                <span class="currency">Rs.</span>
+                                <span class="amount">180</span>
+                                <span class="unit">/L</span>
+                            </div>
+                        </div>
+                        <p class="product-desc">Haddi mazboot aur calcium se bharpoor.</p>
+                        <div class="product-benefits">
+                            <span class="benefit-tag"><i class="fas fa-bone"></i> Calcium</span>
+                            <span class="benefit-tag"><i class="fas fa-heart"></i> Protein</span>
+                            <span class="benefit-tag"><i class="fas fa-shield-halved"></i> Immunity</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-add-cart" data-id="1" data-name="Cow Milk" data-price="180">
+                                <i class="fas fa-cart-plus"></i> Add to Cart
+                            </button>
+                            <button class="btn-wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Donkey Milk -->
+                <div class="product-card" data-category="donkey">
+                    <div class="product-badge premium">
+                        <i class="fas fa-gem"></i> Premium
+                    </div>
+                    <div class="product-image donkey-milk">
+                        <div class="milk-bottle-visual">
+                            <div class="bottle-mini">
+                                <div class="bottle-mini-cap"></div>
+                                <div class="bottle-mini-body" style="background: linear-gradient(135deg, #e8e0d5, #d4c5b5);">
+                                    <div class="mini-label">DONKEY</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-emoji">🫏</div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-header">
+                            <h3 class="product-name">Donkey Milk</h3>
+                            <div class="product-price">
+                                <span class="currency">Rs.</span>
+                                <span class="amount">500</span>
+                                <span class="unit">/L</span>
+                            </div>
+                        </div>
+                        <p class="product-desc">Skin glow aur immunity booster.</p>
+                        <div class="product-benefits">
+                            <span class="benefit-tag"><i class="fas fa-sparkles"></i> Glow</span>
+                            <span class="benefit-tag"><i class="fas fa-shield-halved"></i> Immunity</span>
+                            <span class="benefit-tag"><i class="fas fa-droplet"></i> Hydrating</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-add-cart" data-id="2" data-name="Donkey Milk" data-price="500">
+                                <i class="fas fa-cart-plus"></i> Add to Cart
+                            </button>
+                            <button class="btn-wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dog Milk -->
+                <div class="product-card" data-category="dog">
+                    <div class="product-badge exotic">
+                        <i class="fas fa-fire"></i> Exotic
+                    </div>
+                    <div class="product-image dog-milk">
+                        <div class="milk-bottle-visual">
+                            <div class="bottle-mini">
+                                <div class="bottle-mini-cap"></div>
+                                <div class="bottle-mini-body" style="background: linear-gradient(135deg, #f5e6d3, #e8d4bc);">
+                                    <div class="mini-label">DOG</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-emoji">🐕</div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-header">
+                            <h3 class="product-name">Dog Milk</h3>
+                            <div class="product-price">
+                                <span class="currency">Rs.</span>
+                                <span class="amount">800</span>
+                                <span class="unit">/L</span>
+                            </div>
+                        </div>
+                        <p class="product-desc">High fat aur protein for puppies.</p>
+                        <div class="product-benefits">
+                            <span class="benefit-tag"><i class="fas fa-fire"></i> High Fat</span>
+                            <span class="benefit-tag"><i class="fas fa-dumbbell"></i> Protein</span>
+                            <span class="benefit-tag"><i class="fas fa-bolt"></i> Energy</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-add-cart" data-id="3" data-name="Dog Milk" data-price="800">
+                                <i class="fas fa-cart-plus"></i> Add to Cart
+                            </button>
+                            <button class="btn-wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Camel Milk -->
+                <div class="product-card" data-category="camel">
+                    <div class="product-badge superfood">
+                        <i class="fas fa-leaf"></i> Superfood
+                    </div>
+                    <div class="product-image camel-milk">
+                        <div class="milk-bottle-visual">
+                            <div class="bottle-mini">
+                                <div class="bottle-mini-cap"></div>
+                                <div class="bottle-mini-body" style="background: linear-gradient(135deg, #f0e6d9, #e0d2c2);">
+                                    <div class="mini-label">CAMEL</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-emoji">🐪</div>
+                    </div>
+                    <div class="product-content">
+                        <div class="product-header">
+                            <h3 class="product-name">Camel Milk</h3>
+                            <div class="product-price">
+                                <span class="currency">Rs.</span>
+                                <span class="amount">400</span>
+                                <span class="unit">/L</span>
+                            </div>
+                        </div>
+                        <p class="product-desc">Diabetes control aur insulin support.</p>
+                        <div class="product-benefits">
+                            <span class="benefit-tag"><i class="fas fa-syringe"></i> Insulin</span>
+                            <span class="benefit-tag"><i class="fas fa-shield-halved"></i> Immunity</span>
+                            <span class="benefit-tag"><i class="fas fa-brain"></i> Brain</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-add-cart" data-id="4" data-name="Camel Milk" data-price="400">
+                                <i class="fas fa-cart-plus"></i> Add to Cart
+                            </button>
+                            <button class="btn-wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section" id="benefits">
+        <div class="container">
+            <div class="section-header" data-reveal>
+                <h2 class="section-title">Why Choose Bondu Milk?</h2>
+                <p class="section-subtitle">Quality you can trust, taste you'll love</p>
+            </div>
+            <div class="benefits-grid" id="benefitsGrid">
+                <div class="benefit-card" data-reveal>
+                    <div class="benefit-icon">
+                        <i class="fas fa-truck-fast"></i>
+                    </div>
+                    <h3>Express Delivery</h3>
+                    <p>Fresh milk delivered to your doorstep within 2 hours of order.</p>
+                </div>
+                <div class="benefit-card" data-reveal>
+                    <div class="benefit-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Quality Certified</h3>
+                    <p>Every batch tested for purity, safety, and nutritional content.</p>
+                </div>
+                <div class="benefit-card" data-reveal>
+                    <div class="benefit-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>100% Organic</h3>
+                    <p>No preservatives, no additives — just pure, natural milk.</p>
+                </div>
+                <div class="benefit-card" data-reveal>
+                    <div class="benefit-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>AI-powered assistance for personalized milk recommendations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Assistant Modal -->
+    <div class="ai-modal" id="ai-modal">
+        <div class="ai-modal-content">
+            <div class="ai-header">
+                <div class="ai-avatar">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3>Bondu AI Assistant</h3>
+                <button class="ai-close" id="ai-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="ai-chat">
+                <div class="ai-message bot">
+                    <div class="message-avatar"><i class="fas fa-robot"></i></div>
+                    <div class="message-content">
+                        <p>Hello! 👋 I'm your Bondu Milk AI Assistant. How can I help you choose the perfect milk for your health needs?</p>
+                    </div>
+                </div>
+                <div class="ai-suggestions">
+                    <button class="ai-suggestion">🥛 Best for bone health</button>
+                    <button class="ai-suggestion">💪 High protein options</button>
+                    <button class="ai-suggestion">✨ Skin & beauty benefits</button>
+                    <button class="ai-suggestion">🏥 Diabetes friendly</button>
+                </div>
+            </div>
+            <div class="ai-input">
+                <input type="text" placeholder="Ask about milk benefits..." id="ai-input">
+                <button class="ai-send" id="ai-send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-glass-water"></i>
+                        </div>
+                        <span class="logo-text">Bondu Milk</span>
+                    </div>
+                    <p>Bringing you exotic, premium quality milk from around the world. Your health is our priority.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="#">About Us</a>
+                    <a href="#">Our Products</a>
+                    <a href="#">Delivery Info</a>
+                    <a href="#">FAQ</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Milk Valley, Pakistan</p>
+                    <p><i class="fas fa-phone"></i> +92 300 1234567</p>
+                    <p><i class="fas fa-envelope"></i> hello@bondumilk.pk</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Hours</h4>
+                    <p>Mon - Fri: 7AM - 9PM</p>
+                    <p>Saturday: 8AM - 7PM</p>
+                    <p>Sunday: 9AM - 5PM</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Bondu Milk Shop. All rights reserved. | Fresh Milk, Happy Life 🥛</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> Your Cart</h3>
+            <button class="cart-close" id="cart-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <p class="empty-cart">Your cart is empty</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total">Rs. 0</span>
+            </div>
+            <button class="btn-checkout">
+                <i class="fas fa-credit-card"></i> Checkout
+            </button>
+        </div>
+    </div>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
