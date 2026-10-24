@@ -1,84 +1,119 @@
 import React from 'react';
-import { ChevronLeft, ChevronRight, CheckCircle2, Star } from 'lucide-react';
+import { ChevronLeft, ChevronRight, CheckCircle2, Star, Quote } from 'lucide-react';
 import { REVIEWS } from '../data/products';
 
 export default function CustomerReviews() {
+  const reviewItems = REVIEWS.filter((r) => r.type === 'review');
+  const imageItems = REVIEWS.filter((r) => r.type === 'image');
+
   return (
-    <section className="section-reviews">
+    <section id="reviews" className="section-reviews">
       <div className="reviews-header">
-        <h2 className="reviews-title">OUR CUSTOMERS LOVE US</h2>
+        <div>
+          <div className="section-sub-badge">
+            <Star size={12} fill="#C48831" color="#C48831" />
+            <span>VERIFIED REVIEWS</span>
+          </div>
+          <h2 className="reviews-title">
+            Loved By <span className="reviews-title-serif">Discerning Families</span>
+          </h2>
+        </div>
 
         <div className="ranch-arrow-btns">
           <button className="btn-arrow-circle-nav" aria-label="Previous review">
-            <ChevronLeft size={16} />
+            <ChevronLeft size={15} />
           </button>
           <button className="btn-arrow-circle-nav" aria-label="Next review">
-            <ChevronRight size={16} />
+            <ChevronRight size={15} />
           </button>
         </div>
       </div>
 
       <div className="reviews-grid">
-        {/* Card 1: Coral Orange Review */}
-        <div className="review-card-base review-card-coral">
-          <div className="review-author-wrap">
-            <img
-              src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=160&q=80"
-              alt="Cathy Carter"
-              className="review-avatar"
-            />
-            <div>
-              <div className="review-author-name">CATHY CARTER</div>
-              <div className="review-author-role">Verified Buyer ✓</div>
+        {/* Card 1: Review 1 */}
+        <div className="review-card-luxury">
+          <div className="review-card-top-row">
+            <div className="review-author-wrap">
+              <img
+                src={reviewItems[0]?.avatar}
+                alt={reviewItems[0]?.name}
+                className="review-avatar-luxury"
+              />
+              <div>
+                <div className="review-author-name">{reviewItems[0]?.name}</div>
+                <div className="review-author-role">
+                  <CheckCircle2 size={12} color="#166534" />
+                  <span>{reviewItems[0]?.badge || 'Verified Buyer'}</span>
+                </div>
+              </div>
             </div>
+            <Quote size={20} className="review-quote-icon" />
           </div>
 
-          <div className="review-stars">
-            {'★'.repeat(5)}
+          <div className="review-stars-row">
+            {[...Array(5)].map((_, i) => (
+              <Star key={i} size={15} fill="#C88D34" color="#C88D34" />
+            ))}
           </div>
 
           <p className="review-body-text">
-            “Unmatched freshness and smooth texture. You can genuinely taste the pasture quality and care in every single bottle!”
+            &ldquo;{reviewItems[0]?.text}&rdquo;
           </p>
         </div>
 
-        {/* Card 2: Photo */}
-        <div className="review-card-photo">
+        {/* Card 2: Editorial Photo */}
+        <div className="review-card-photo-luxury">
           <img
-            src="https://images.unsplash.com/photo-1603048588665-791ca8aea617?auto=format&fit=crop&w=600&q=80"
-            alt="Farm fresh dairy cuts"
+            src={imageItems[0]?.image}
+            alt={imageItems[0]?.title}
+            className="review-photo-img"
           />
+          <div className="review-photo-caption">
+            <span>{imageItems[0]?.title}</span>
+          </div>
         </div>
 
-        {/* Card 3: Forest Green Review */}
-        <div className="review-card-base review-card-green">
-          <div className="review-author-wrap">
-            <img
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=160&q=80"
-              alt="Daniel Rodriguez"
-              className="review-avatar"
-            />
-            <div>
-              <div className="review-author-name">DANIEL RODRIGUEZ</div>
-              <div className="review-author-role">Pasture Dairy Club ✓</div>
+        {/* Card 3: Review 2 */}
+        <div className="review-card-luxury">
+          <div className="review-card-top-row">
+            <div className="review-author-wrap">
+              <img
+                src={reviewItems[1]?.avatar}
+                alt={reviewItems[1]?.name}
+                className="review-avatar-luxury"
+              />
+              <div>
+                <div className="review-author-name">{reviewItems[1]?.name}</div>
+                <div className="review-author-role">
+                  <CheckCircle2 size={12} color="#166534" />
+                  <span>{reviewItems[1]?.badge || 'Executive Chef'}</span>
+                </div>
+              </div>
             </div>
+            <Quote size={20} className="review-quote-icon" />
           </div>
 
-          <div className="review-stars">
-            {'★'.repeat(5)}
+          <div className="review-stars-row">
+            {[...Array(5)].map((_, i) => (
+              <Star key={i} size={15} fill="#C88D34" color="#C88D34" />
+            ))}
           </div>
 
           <p className="review-body-text">
-            “Wonderfully fresh and smooth, with a clean taste that feels genuinely premium. Best whole milk we have ever had.”
+            &ldquo;{reviewItems[1]?.text}&rdquo;
           </p>
         </div>
 
-        {/* Card 4: Photo */}
-        <div className="review-card-photo">
+        {/* Card 4: Editorial Photo */}
+        <div className="review-card-photo-luxury">
           <img
-            src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80"
-            alt="Customer enjoying outdoor sunshine"
+            src={imageItems[1]?.image}
+            alt={imageItems[1]?.title}
+            className="review-photo-img"
           />
+          <div className="review-photo-caption">
+            <span>{imageItems[1]?.title}</span>
+          </div>
         </div>
       </div>
     </section>

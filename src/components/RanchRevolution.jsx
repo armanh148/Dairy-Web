@@ -1,46 +1,74 @@
 import React from 'react';
-import { ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Leaf, Shield, Sun, ArrowRight } from 'lucide-react';
 
 export default function RanchRevolution({ onOpenCheckout }) {
   return (
     <section id="farm" className="section-ranch">
       <div className="ranch-grid">
-        {/* Left Photo of Fluffy Highland Cow with Sun Halo */}
+        {/* Left Photo of Highland Cow with Premium Vignette */}
         <div className="ranch-portrait-card">
           <img
             src="/images/ranch_cow.jpg"
-            alt="Majestic highland cow with golden sun halo"
+            alt="Majestic highland cow grazing under warm sunrise in pasture"
             className="ranch-portrait-img"
           />
-          <div className="ranch-doodle-horns">
-            ✨
+          <div className="ranch-card-overlay-badge">
+            <span className="badge-pulse-dot" />
+            <span>CERTIFIED 100% ETHICAL CARE</span>
           </div>
         </div>
 
-        {/* Right Content & Thumbnails */}
+        {/* Right Content & Editorial Highlights */}
         <div className="ranch-content-wrap">
+          <div className="section-sub-badge">
+            <Sun size={12} color="#C48831" />
+            <span>REGENERATIVE AGRICULTURE</span>
+          </div>
+
           <h2 className="ranch-title">
-            EXPERIENCE THE <br />
-            RANCH <span className="badge-inline-pill">🌸 LIFE</span> <br />
-            REVOLUTION
+            Experience The <br />
+            <span className="ranch-title-serif">Ranch Life</span> Revolution
           </h2>
 
           <p className="ranch-desc">
-            Experience the ranch life revolution with pure, sustainable, nutrient-dense milk cold-crafted for active healthy living. 
-            Free-grazing ethical herds living naturally under open skies.
+            We practice rotational meadow grazing that restores soil biome health and preserves natural clover ecosystems. Our herds roam freely across 300+ sunny acres, drinking natural spring water and breathing clean country air.
           </p>
 
+          {/* Pillars List */}
+          <div className="ranch-pillars-grid">
+            <div className="ranch-pillar-item">
+              <div className="pillar-icon-box">
+                <Leaf size={16} color="var(--forest-green)" />
+              </div>
+              <div>
+                <div className="pillar-title">100% Grass-Fed</div>
+                <div className="pillar-sub">Never fed GMOs, corn, or commercial soy feed.</div>
+              </div>
+            </div>
+
+            <div className="ranch-pillar-item">
+              <div className="pillar-icon-box">
+                <Shield size={16} color="var(--forest-green)" />
+              </div>
+              <div>
+                <div className="pillar-title">Antibiotic & Hormone Free</div>
+                <div className="pillar-sub">Nurtured with gentle holistic veterinary care.</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Pasture Highlights Gallery Header */}
           <div className="ranch-slider-header">
-            <span style={{ fontSize: '0.8rem', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--text-muted)' }}>
-              MEET OUR PASTURES
+            <span className="ranch-pastures-tag">
+              PASTURE GLIMPSES &bull; LIVE HERD
             </span>
 
             <div className="ranch-arrow-btns">
-              <button className="btn-arrow-circle-nav" aria-label="Previous">
-                <ChevronLeft size={16} />
+              <button className="btn-arrow-circle-nav" aria-label="Previous pasture view">
+                <ChevronLeft size={15} />
               </button>
-              <button className="btn-arrow-circle-nav" aria-label="Next">
-                <ChevronRight size={16} />
+              <button className="btn-arrow-circle-nav" aria-label="Next pasture view">
+                <ChevronRight size={15} />
               </button>
             </div>
           </div>
@@ -49,24 +77,24 @@ export default function RanchRevolution({ onOpenCheckout }) {
             <div className="ranch-thumb-card">
               <img
                 src="/images/calf_pasture.jpg"
-                alt="Baby calf resting in green grass"
+                alt="Baby calf resting safely in clover pasture"
                 className="ranch-thumb-img"
               />
               <div className="ranch-thumb-info">
-                <span className="ranch-thumb-label">PURE NURTURED PASTURE</span>
-                <span style={{ fontSize: '0.75rem', color: 'var(--coral-orange)', fontWeight: '800' }}>→</span>
+                <span className="ranch-thumb-label">Nurtured Young Calves</span>
+                <span className="thumb-arrow-icon"><ArrowRight size={12} /></span>
               </div>
             </div>
 
             <div className="ranch-thumb-card">
               <img
                 src="/images/hero_cow.jpg"
-                alt="Herd grazing in afternoon meadow"
+                alt="Herd grazing quietly in afternoon meadow"
                 className="ranch-thumb-img"
               />
               <div className="ranch-thumb-info">
-                <span className="ranch-thumb-label">PURE PASSION FOR DAIRY</span>
-                <span style={{ fontSize: '0.75rem', color: 'var(--coral-orange)', fontWeight: '800' }}>→</span>
+                <span className="ranch-thumb-label">Open Meadow Grazing</span>
+                <span className="thumb-arrow-icon"><ArrowRight size={12} /></span>
               </div>
             </div>
           </div>
