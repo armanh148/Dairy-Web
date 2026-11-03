@@ -189,7 +189,7 @@ button {
 
 .content-container {
   width: 100%;
-  max-width: 1440px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 1.25rem clamp(1.2rem, 3.5vw, 4rem);
   margin-bottom: clamp(2rem, 4vw, 4rem);
@@ -212,7 +212,7 @@ button {
 /* === 3. STANDALONE TOP NAVBAR & MOBILE DRAWER === */
 .site-header-bar {
   width: 100%;
-  max-width: 1440px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 1.2rem clamp(1rem, 3.5vw, 4rem) 0.6rem;
   position: relative;
@@ -1845,6 +1845,9 @@ button {
   padding-bottom: clamp(2rem, 3.5vw, 3rem);
   margin-bottom: clamp(2rem, 3.5vw, 3.5rem);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .footer-val-item {
@@ -1867,6 +1870,9 @@ button {
   gap: clamp(1.8rem, 3.5vw, 4rem);
   margin-bottom: clamp(2.5rem, 4vw, 4rem);
   width: 100%;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (max-width: 1024px) {
@@ -2020,6 +2026,9 @@ button {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.55);
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .footer-social-icons {
